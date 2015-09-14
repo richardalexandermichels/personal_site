@@ -14,9 +14,9 @@
       <ul class="nav navbar-nav">
         <li ng-repeat="item in items" ng-class="{'dropdown' : item==='Skills'}">
             
-            <a ng-if="item.state!=='skills'" ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
+            <a ng-if="item.label!=='skills'" ui-sref-active="active" ui-sref="{{ item.label }}">{{ item.label }}</a>
             
-            <a ng-if="item.state==='skills'" ui-sref="Skills" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Skills <span class="caret"></span>
+            <a ng-if="item.label==='skills'" ui-sref="Skills" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Skills <span class="caret"></span>
             </a>
 
           <ul class="dropdown-menu">

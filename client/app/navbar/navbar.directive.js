@@ -1,5 +1,14 @@
 'use strict';
 var states = require('./states');
+var _ = require('lodash');
+
+var stateItems = [];
+
+_.forOwn(states, function(value, key){
+    stateItems.push(value());
+});
+
+console.log('what is state items', stateItems);
 
 module.exports = function($http) {
     return {
@@ -9,9 +18,9 @@ module.exports = function($http) {
         link: function(scope) {
             //this is for the hamburger responsive icon
             scope.spans = new Array(3);
-            console.log('states', states);
-            scope.items = states;
-            console.log('scopey items', scope.items);
+            //console.log('states Items Yo', stateItems);
+            scope.items = stateItems;
+            //console.log('scopey items', scope.items);
             // scope.items = [
             //     { label: 'Home', state: 'home' },
             //     { label: 'Profile', state: 'profile' },

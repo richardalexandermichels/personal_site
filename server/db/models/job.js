@@ -25,6 +25,7 @@ var schema = new mongoose.Schema({
     }
 });
 
+
 // generateSalt, encryptPassword and the pre 'save' and 'correctPassword' operations
 // are all used for local authentication security.
 

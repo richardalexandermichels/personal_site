@@ -23,56 +23,70 @@ var chalk = require('chalk');
 var connectToDb = require('./server/db');
 
 
-var Address = Promise.promisifyAll(mongoose.model('Address'));
+//var Address = Promise.promisify(mongoose.model('Address'));
+var Address = mongoose.model('Address');
 var Job = Promise.promisifyAll(mongoose.model('Job'));
 //var Job = Promise.promisifyAll(mongoose);
 
 var createAddress = function(line1, line2, city, state, zip) {
-    this.line1 = line1;
-    this.line2 = line2;
-    this.city = city;
-    this.state = state;
-    this.zip = zip;
 
+    return new Address({
+        line1: line1,
+        line2: line2,
+        city: city,
+        state: state,
+        zip: zip    
+    })
+    // return {
+    //     line1: line1,
+    //     line2: line2,
+    //     city: city,
+    //     state: state,
+    //     zip: zip
+    // }
 }
 
 var createJob = function(company, address, title, position, startDate, endDate) {
-    this.company = company;
-    this.address = address;
-    this.title = title,
-    this.position = position,
-    this.startDate = startDate,
-    this.endDate = endDate
+    // console.log('what is address', address);
+    return {
+        company: company,
+        address: address,
+        title: title,
+        position: position,
+        startDate: startDate,
+        endDate: endDate
+    }
 }
 
 var seedJobs = function() {
 
-    var markitAddress = new createAddress('620 8th Avenue', '35th Floor', 'New York', 'NY', '10018');
+    var markitAddress = createAddress('620 8th Avenue', '35th Floor', 'New York', 'NY', '10018');
 
     var markit = new createJob(
         'Markit',
-        {
-            line1: '620 8th Avenue',
-            line2: '35th Floor',
-            city: 'New York',
-            state: 'NY',
-            zip: '10018'
-        },
+        markitAddress,
         'Vice President',
         'Product Mananger',
         '8/10/2010',
         '6/5/2015'
     );
 
-    // var jobs = [{
-    //     email: 'testing@fsa.com',
-    //     password: 'password'
-    // }, {
-    //     email: 'obama@gmail.com',
-    //     password: 'potus'
-    // }];
-    var jobs = [markit];
-    return Job.createAsync(jobs);
+    var job = new Job(markit);
+
+    return Job.createAsync(job)
+        .then(function(item) {
+            return Job.findOne(item)
+                .populate('address')
+                .exec(markitAddress.save())
+        })
+        .then(function(savedJob){
+            console.log('what is saved', savedJob);
+            return;
+        })
+        .catch(function(e) {
+            console.log('waht is error', e);
+        })
+
 
 };
 

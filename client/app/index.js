@@ -12,3 +12,4 @@ app.config(function($urlRouterProvider,$locationProvider) {
 	})
 
 app.directive('navbar', ['$http', navbar]);
+// app.directive('navbar',navbar);
