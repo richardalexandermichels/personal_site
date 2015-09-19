@@ -101,6 +101,14 @@ gulp.task('reloadCSS', function () {
 // Gulp Tasks - Client JS
 // ---------------------------------------------------------------
 
+gulp.task('lintJS', function () {
+
+    return gulp.src(['client/**/*.js', 'server/**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
+
+});
 
 gulp.task('buildJS', function() {
     return buildScript(scriptFile, true);
