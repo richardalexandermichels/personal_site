@@ -1,10 +1,11 @@
 //var fs = require('fs');
-function config($stateProvider) {
+//
+function experienceState($stateProvider) {
     $stateProvider
         .state('experience', {
             url: '/experience',
-            templateUrl: './experience.html',
-            controller: require('./experience.controller.js'),
+            controller: 'ExperienceCtrl as experienceCtrl',
+            templateUrl: '/app/pages/experience/experience.html',
             resolve: {
                 jobs: function($http) {
                     return $http.get('/api/experience')
@@ -12,8 +13,11 @@ function config($stateProvider) {
                             return res.data
                         });
                 }
+
             }
+
         })
 }
+experienceState.$inject = ['$stateProvider'];
 
-module.exports = config
+module.exports = experienceState

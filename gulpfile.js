@@ -122,12 +122,12 @@ gulp.task('reload', function () {
 gulp.task('default', function() {
 
     livereload.listen();
-    gulp.start('buildJS');
+    gulp.start(['buildCSS', 'buildJS']);
 
     gulp.watch(
         ['client/**/*.js', 'server/**/*.js', 'client/**/*.html'],
         function(){
-            runSeq('buildJS','reload');
+            runSeq('lintJS', 'buildJS','reload');
         }
     );
 
@@ -144,7 +144,7 @@ gulp.task('default', function() {
     );
 
     gulp.watch(
-        ['server/**/*.js'], ['lintJS']
+        ['client/**/*.js','server/**/*.js'], ['lintJS']
     );
 
 

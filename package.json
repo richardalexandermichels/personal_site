@@ -16,7 +16,7 @@
     "babelify": "^6.3.0",
     "bluebird": "^2.9.34",
     "body-parser": "^1.13.3",
-    "bootswatch": "^3.3.5",
+    "bootswatch-sass": "^3.2.0",
     "browserify": "^11.1.0",
     "browserify-shim": "^3.8.10",
     "chai": "^3.2.0",

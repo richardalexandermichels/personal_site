@@ -7,7 +7,7 @@ module.exports = router;
 
 router.get('/', function (req, res, next) {
 	console.log('start')
-	Job.find().exec()
+	Job.find({}).populate(['position','address']).exec()
 		.then(function(item){
 			if(item) res.json(item);
 			else return;

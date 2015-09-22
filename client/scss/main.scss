@@ -1,3 +1,11 @@
+@import "../../node_modules/bootswatch-sass/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables";
+@import "../../node_modules/bootswatch-sass/slate/_variables";
+
+@import "../../node_modules/bootswatch-sass/bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
+@import "../../node_modules/bootswatch-sass/slate/_bootswatch";
+
+@import "../app/pages/experience/experience";
+
 a {
 	color:#a1a1a1;
 }
@@ -5,3 +13,5 @@ a {
 a:hover{
 	color:white;
 }
+
+

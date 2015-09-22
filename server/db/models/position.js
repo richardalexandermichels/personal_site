@@ -2,21 +2,16 @@
 
 var mongoose = require('mongoose');
 var schema = new mongoose.Schema({
-    company: {
+    title: {
+        type: String,
+        require: true
+    },
+    position: {
         type: String,
         required: true
     },
-    address: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Address'
-    },
-    position: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Position'
-    }],
     startDate: {
-        type: Date,
-        required: true
+        type: Date
     },
     endDate: {
         type: Date
@@ -28,4 +23,4 @@ var schema = new mongoose.Schema({
 // are all used for local authentication security.
 
 
-mongoose.model('Job', schema);
+mongoose.model('Position', schema);
