@@ -9,4 +9,4 @@ module.exports = angular.module('app', [
 ])
     .config(require('./config'));
 
-var hello = "hello warld?";
+var hello = "hello world?";
