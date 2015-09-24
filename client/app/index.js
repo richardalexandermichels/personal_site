@@ -8,3 +8,5 @@ module.exports = angular.module('app', [
     require('./pages').name
 ])
     .config(require('./config'));
+
+var hello = "hello world?";
