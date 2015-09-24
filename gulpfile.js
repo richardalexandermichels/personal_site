@@ -78,7 +78,7 @@ function buildScript(file, watch) {
         rebundle();
         gutil.log('Rebundle...');
     });
-    
+
     return rebundle();
 }
 
@@ -94,14 +94,14 @@ gulp.task('buildCSS', function() {
         .pipe(gulp.dest(buildDir));
 });
 
-gulp.task('reloadCSS', function () {
+gulp.task('reloadCSS', function() {
     return gulp.src('./public/style.css').pipe(livereload());
 });
 
 // Gulp Tasks - Client JS
 // ---------------------------------------------------------------
 
-gulp.task('lintJS', function () {
+gulp.task('lintJS', function() {
 
     return gulp.src(['client/**/*.js', 'server/**/*.js'])
         .pipe(eslint())
@@ -115,7 +115,7 @@ gulp.task('buildJS', function() {
 });
 
 // Live reload business.
-gulp.task('reload', function () {
+gulp.task('reload', function() {
     livereload.reload();
 });
 
@@ -126,25 +126,24 @@ gulp.task('default', function() {
 
     gulp.watch(
         ['client/**/*.js', 'server/**/*.js', 'client/**/*.html'],
-        function(){
-            runSeq('lintJS', 'buildJS','reload');
+        function() {
+            runSeq('lintJS', 'buildJS', 'reload');
         }
     );
 
     gulp.watch(
-        ['client/scss/**/*.scss'],
-        function(){
+        ['client/scss/**/*.scss', 'client/app/**/**/*.scss'],
+        function() {
             runSeq('buildCSS', 'reloadCSS')
         }
     );
 
     gulp.watch(
-        ['client/**/*.html', 'server/app/views/*.html'],
-        ['reload']
+        ['client/**/*.html', 'server/app/views/*.html'], ['reload']
     );
 
     gulp.watch(
-        ['client/**/*.js','server/**/*.js'], ['lintJS']
+        ['client/**/*.js', 'server/**/*.js'], ['lintJS']
     );
 
 

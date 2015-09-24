@@ -19,7 +19,9 @@ app.use('/api', require('./routes'));
  This allows for proper 404s instead of the wildcard '/*' catching
  URLs that bypass express.static because the given file does not exist.
  */
-app.use(function (req, res, next) {
+
+
+app.use(function(req, res, next) {
 
     if (path.extname(req.path).length > 0) {
         res.status(404).end();
@@ -29,12 +31,13 @@ app.use(function (req, res, next) {
 
 });
 
-app.get('/*', function (req, res) {
+
+app.get('/*', function(req, res) {
     res.sendFile(app.get('indexHTMLPath'));
 });
 
 // Error catching endware.
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     console.error(err, typeof next);
     res.status(err.status || 500).send(err.message || 'Internal server error.');
 });

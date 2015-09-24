@@ -17,35 +17,8 @@ function navbar() {
             //this is for the hamburger responsive icon
             scope.spans = new Array(3);
             scope.items = require('../pages').requires
-            // scope.items = [{
-            //         label: 'Home',
-            //         state: 'home'
-            //     }, {
-            //         label: 'Profile',
-            //         state: 'profile'
-            //     }, {
-            //         label: 'Portfolio',
-            //         state: 'portfolio'
-            //     }, {
-            //         label: 'Services',
-            //         state: 'services'
-            //     }, {
-            //         label: 'Experience',
-            //         state: 'experience'
-            //     }, {
-            //         label: 'References',
-            //         state: 'references'
-            //     }, {
-            //         label: 'Skills',
-            //         state: 'skills'
-            //     }, {
-            //         label: 'Contact',
-            //         state: 'contact'
-            //     }
-                //{ label: 'Members Only', state: 'membersOnly', auth: true }
-            //];
         }
-    }
+    };
 }
 
 

@@ -1,0 +1,75 @@
+#key{
+	display: inline;
+	list-style-type: none;
+	padding-right: 15px;
+}
+.blue-square{
+	width:15px;
+	height:15px;
+	background-color: DodgerBlue;
+	display: inline-block;
+}
+
+.progress{
+	margin:5px;
+	height: 25px;
+}
+
+.progress-bar {
+	background-color: DodgerBlue;
+	text-align: left;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	font-size: 18px;
+	white-space: nowrap;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.progress-bar > .progress-type {
+	margin:0px;
+	padding-left: 10px;
+}
+
+.progress-meter {
+	min-height: 15px;
+	border-bottom: 2px solid rgb(160, 160, 160);
+}
+
+.progress-meter > .meter {
+	position: relative;
+	float: left;
+	min-height: 15px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: rgb(160, 160, 160);
+}
+
+.progress-meter > .meter-left {
+	border-left-width: 2px;
+}
+
+.progress-meter > .meter-right {
+	float: right;
+	border-right-width: 2px;
+}
+
+.progress-meter > .meter-right:last-child {
+	border-left-width: 2px;
+}
+
+.progress-meter > .meter > .meter-text {
+	position: absolute;
+	display: inline-block;
+	bottom: -20px;
+	width: 100%;
+	font-weight: 700;
+	font-size: 0.85em;
+	color: rgb(160, 160, 160);
+	text-align: left;
+}
+
+.progress-meter > .meter.meter-right > .meter-text {
+	text-align: right;
+}
