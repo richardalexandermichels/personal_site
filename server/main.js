@@ -15,7 +15,6 @@ var createApplication = function() {
 }
 
 var startServer = function() {
-    console.log("ENV PORT PLS", process.env);
     var PORT = process.env.PORT || 80;
 
     server.listen(PORT, function() {
