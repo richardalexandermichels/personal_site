@@ -14,10 +14,11 @@ var createApplication = function() {
     require('./io')(server); // Attach socket.io
 }
 
-var startServer = function(){
+var startServer = function() {
+    console.log("ENV PORT PLS", process.env.PORT);
     var PORT = process.env.PORT || 1337;
 
-    server.listen(PORT, function(){
+    server.listen(PORT, function() {
         console.log(chalk.blue('Server started on port', chalk.magenta(PORT)));
     });
 
@@ -26,8 +27,7 @@ var startServer = function(){
 startDb
     .then(createApplication)
     .then(startServer)
-    .catch(function(err){
+    .catch(function(err) {
         console.log(chalk.red(err.stack));
         process.kill(1);
     });
-
