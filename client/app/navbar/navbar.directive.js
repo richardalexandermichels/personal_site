@@ -16,7 +16,7 @@ function navbar() {
         link: function(scope) {
             //this is for the hamburger responsive icon
             scope.spans = new Array(3);
-            scope.items = require('../pages').requires
+            scope.items = require('../pages').requires;
         }
     };
 }
