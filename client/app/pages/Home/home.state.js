@@ -3,7 +3,7 @@ function homeState($stateProvider, $http) {
     $stateProvider
         .state('HOME', {
             url: '/home',
-            templateUrl: '/app/pages/home/home.html'
+            templateUrl: '/app/pages/Home/home.html'
         })
 }
 homeState.$inject = ['$stateProvider'];
