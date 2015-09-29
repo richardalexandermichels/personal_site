@@ -6,6 +6,8 @@
 
 @import "../app/pages/CV/cv.scss";
 
+@import "../app/pages/Home/home.scss";
+
 @media screen and (min-aspect-ratio: 16/9) {
 	.landingBody{
 		background-size: 100vw;
@@ -22,22 +24,25 @@
 	background-image: url("/asset/beachLanding.jpg");
 }
 
+.flare-up{
+	-webkit-transition: background-color 2s ease-out, box-shadow 1.5s ease-out;
+}
+.flare-up:hover{
+	box-shadow: 0px 0px 100px 3vh rgba(255,167,108,1);
+	background-color: rgba(255,167,108,.8);
+}
+
 .landing{
 	margin-top: -webkit-calc(50vh - 25vh);
 	margin-left: -webkit-calc(50vw - 25vh);;
 	background-color: rgba(0,0,0,.80);
 	/*border: 2vh solid rgba(84, 84, 84, .5);*/
-	-webkit-transition: background-color 2s ease-out, box-shadow 1.5s ease-out;
 	border-radius: 50%;
 	width: 50vh;
 	height: 50vh;
 	/* width and height can be anything, as long as they're equal */
 }
 
-.landing:hover{
-	box-shadow: 0px 0px 100px 3vh rgba(255,167,108,1);
-	background-color: rgba(255,167,108,.8);
-}
 
 .portal{
 	height: 100px;
@@ -47,6 +52,9 @@
 
 #home{
 	top: 100px;
-	font-size: 120%;
+	font-size: 100%
 }
-
+#profile{
+	top: 100px;
+	font-size: 100%
+}
