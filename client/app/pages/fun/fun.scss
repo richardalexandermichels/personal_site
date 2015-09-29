@@ -1,0 +1,35 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+#shapes {
+  position:  absolute;
+  width: 800px;
+  height: 600px;
+  margin-left: calc(50vw - 400px);
+  top: 40px;
+  z-index: 1;
+}
+
+#bg {
+  position:  absolute;
+  width: 800px;
+  height: 600px;
+  margin-left: calc(50vw - 400px);
+  top: 40px;
+  z-index: 0;
+}
+
+#pos{
+	position: absolute;
+	top: 20px;
+}
+
+#score{
+	position: absolute;
+	top: 50px;
+}
+
+#time-left{
+  position: absolute;
+  top: 5px;
+  left: 43vw;
+}
