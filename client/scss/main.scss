@@ -9,6 +9,7 @@
 .landingBody{
 	overflow:hidden;
 	background-image: url("/asset/beachLanding.jpg");
+	max-width: 100vw;
 }
 
 .landing{
@@ -36,7 +37,3 @@
 	line-height: 50px;
 }
 */
-.landingImage {
-	position:fixed;
-    max-width: 100vw;
-}
