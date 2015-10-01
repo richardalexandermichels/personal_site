@@ -1,25 +1,27 @@
 .bl{
 	background:white;
 }
-#key{
-	display: inline;
-	list-style-type: none;
+.key{
 	padding-right: 15px;
+	float: left;
+	display: inline;
 }
 .blue-square{
+	margin-top: 3px;
 	width:15px;
 	height:15px;
-	background-color: DodgerBlue;
-	display: inline-block;
+	background-color: rgba(255,167,108,1);
+	float: left;
 }
 
 .progress{
 	margin:5px;
 	height: 25px;
+	background-color: red;
 }
 
 .progress-bar {
-	background-color: DodgerBlue;
+	background-color: rgba(255,167,108,1);
 	text-align: left;
 	font-family: 'Arial Narrow', Arial, sans-serif;
 	line-height: 140%;
@@ -30,6 +32,19 @@
 	text-overflow: ellipsis;
 	cursor: pointer;
 }
+/* Back of the bar*/
+.progress-bar:last-child.progress-bar:before {
+    display: block;
+    content: 'div::before';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #add8e6;
+}
+
 
 .progress-bar > .progress-type {
 	margin:0px;
