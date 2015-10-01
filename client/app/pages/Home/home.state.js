@@ -4,10 +4,18 @@ var HomeCtrl = require('./home.controller.js');
 function homeState($stateProvider, $http) {
     $stateProvider
         .state('HOME', {
-            url: '/home',
+            abstract: true,
             templateUrl: '/app/pages/Home/home.html',
             controller: HomeCtrl,
-            controllerAs: 'home'
+            controllerAs: 'home',
+        })
+        .state('HOME.nest', {
+            url: '/home',
+            views: {
+                'coop': {
+                    templateUrl: "/app/pages/CV/profile.html"
+                }
+            }
         })
 }
 homeState.$inject = ['$stateProvider'];

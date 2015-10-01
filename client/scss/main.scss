@@ -8,6 +8,9 @@
 
 @import "../app/pages/Home/home.scss";
 
+
+
+
 @media screen and (min-aspect-ratio: 16/9) {
 	.landingBody{
 		background-size: 100vw;
@@ -28,7 +31,7 @@
 	-webkit-transition: background-color 2s ease-out, box-shadow 1.5s ease-out;
 }
 .flare-up:hover{
-	box-shadow: 0px 0px 100px 3vh rgba(255,167,108,1);
+	box-shadow: 0px 0px 80px 3vh rgba(255,167,108,1);
 	background-color: rgba(255,167,108,.8);
 }
 

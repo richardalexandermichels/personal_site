@@ -1,7 +1,10 @@
+
 .flex-container {
+  background-color: white;
   padding: 0;
   margin: 0;
   list-style: none;
+
   
   display: -webkit-box;
   display: -moz-box;
@@ -10,14 +13,14 @@
   display: flex;
   
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  /*justify-content: center;*/
 }
 
 .flex-item {
   background: tomato;
   padding: 5px;
-  width: 175px;
-  height: 175px;
+  width: 200px;
+  height: 200px;
   margin-top: 10px;
   border-radius: 50%;
   
@@ -26,4 +29,34 @@
   font-weight: bold;
   font-size: 2em;
   text-align: center;
+}
+.bg{
+  background-color: #add8e6;
+}
+
+/*style for a fullpage, scrolled over element*/
+[fullpage-scroll='top']{
+  position:fixed;
+  top:100px;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:-1;
+}
+.rest{
+   background:black;/*override as needed*/
+  z-index:10;
+}
+/*style for a fullpage, non scrolled over element*/
+[fullpage-scroll='noscroll']{
+  background-image: url('http://placehold.it/1000x1000');/*override as needed*/
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/*style for the content scrolling over the element with fullpage-scroll="top"*/
+[fullpage-scroll='scroll']{
+  background:black;/*override as needed*/
+  z-index:10;
 }

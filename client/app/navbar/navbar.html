@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
         <li ng-repeat="item in items" ng-class="{'dropdown' : item==='Skills'}">
             
-            <a ng-if="item!=='skills'" ui-sref-active="active" ui-sref="{{ item }}">{{ item | uppercase}}</a>
+            <a ng-if="item!=='skills'" ui-sref-active="active" ui-sref="{{item == 'HOME' ? 'HOME.nest': item}}">{{ item | uppercase}}</a>
 
         </li>
 
