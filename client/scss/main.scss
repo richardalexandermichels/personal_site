@@ -8,7 +8,11 @@
 
 @import "../app/pages/Home/home.scss";
 
-
+navbar{
+	position:fixed;
+	width: 100vw;
+	z-index: 100;
+}
 
 
 @media screen and (min-aspect-ratio: 16/9) {
