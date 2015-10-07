@@ -1,2 +1,2 @@
 # resume
-bryanchu.info resume site using the MEAN stack
+richardmichels.info resume site using the MEAN stack
